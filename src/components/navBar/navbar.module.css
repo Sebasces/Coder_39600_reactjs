@@ -1,0 +1,30 @@
+.navbar {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #556cd6;
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    box-shadow: 3px 3px 2px 0px #0d0d0e;
+    color:beige;
+    width: 100%;
+    text-shadow: 1px 1px 1px rgb(9, 9, 9);
+    height: auto;
+}
+
+.lista {
+    display:flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    width: 80%;
+    margin-right:1em;
+   list-style: none;
+}
+
+.logo {
+    width: 5em;
+    height: 5em;
+    
+}
