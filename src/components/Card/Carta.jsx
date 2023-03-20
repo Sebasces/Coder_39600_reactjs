@@ -5,7 +5,7 @@ import styles from './carta.module.css'
 
 const Carta = ({product}) => {
   return (
-        <Link to={`/Products/${product.id}`}  >
+        <Link to={`/Products/${product.id}`} className={styles.cproducto} >
         <div >
         <h5>{product.title}</h5>
         <img src={product.image} width="100" height="100"/>
