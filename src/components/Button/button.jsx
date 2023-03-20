@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './button.module.css';
 
-const handleClick = () => {alert("Sitio en Construcción")};
+
 
 const Button = ({ handleClick, text }) => {
     return ( 
