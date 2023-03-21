@@ -11,6 +11,7 @@
     width: 100%;
     text-shadow: 1px 1px 1px rgb(9, 9, 9);
     height: auto;
+    text-decoration: none;
     
 }
 
@@ -22,6 +23,7 @@
     width: 80%;
     margin-right:1em;
    list-style: none;
+   text-decoration: none;
    
 }
 
@@ -29,4 +31,8 @@
     width: 5em;
     height: 5em;
     
+}
+.nodecoration {
+    text-decoration: none;
+    list-style: none;
 }

@@ -12,12 +12,12 @@ const NavBar = () => {
       <img className={styles.logo} src= {logo} alt="logo" />
       </Link>
       <ul className={styles.lista}>
-        <Link to="/">
-        <li>Home</li>
+        <Link to="/" style={{color:'white', textDecoration: 'none' }}> 
+        <li >Home</li>
         </Link>
-        <Link to="/Products">
+        
         <li>Products</li>
-        </Link>
+        
         <li onClick={redirect}>Contact</li>
         <li onClick={redirect}>About</li>
       </ul>
