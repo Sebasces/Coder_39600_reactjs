@@ -2,40 +2,46 @@
 
 import styles from './itemlistcontainer.module.css'
 import Carta from '../Card/Carta';
-import Categories from '../Categorias/Categorias';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+  import { useParams } from 'react-router-dom';
 
 
 
+const ItemListContainer = () => {
 
-
-
-
-
-const ItemListContainer = ( {products}) => {
-
-  const categorias = [
-  "electronics",
-  "jewerly", 
-  "men's clothing",
-  "women's clothing",
-]
-console.log(categorias)
-
-const { categoria } = useParams;
-if (categoria != undefined) {products = products.filter((product) => product.category == categoria)}
   
+
+  const { categoryId } = useParams;
+
+  const [products, setProducts] = useState ([])
+
+  
+  useEffect (() => {  
+    fetch('https://fakestoreapi.com/products/')
+  .then(res=>res.json())
+  .then(data=>{
+if(categoryId){
+const productFiltrados = data.filter(p => p.category === categoryId)
+setProducts(productFiltrados )
+}else{
+setProducts(data)
+}})
+  .catch((error) => {    
+    console.error(error);    
+  })
+  }, [] )
+
+
 return (
-    <div>   
-      <div>
-    <Categories />
-      </div>
+    
+
     <div className={styles.cardContainer}>
       {products.map ((product) => (
       <Carta key={product.id} product={product} className={styles.producto}>
       </Carta>)) }
     </div>
-    </div>
+  
+  
   )
 }
 

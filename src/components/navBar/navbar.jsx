@@ -5,7 +5,7 @@ import logo from './logo.png'
 import { Link } from 'react-router-dom';
 
 
-const redirect = () => {alert('Proximamente')}
+
 const NavBar = () => {
   return (
     <nav className={styles.navbar}>
@@ -16,13 +16,15 @@ const NavBar = () => {
         <Link to="/" style={{color:'white', textDecoration: 'none' }}> 
         <li >Home</li>
         </Link>
-        
+        <Link to="/category/jewerly">
         <li>
-          Productos
+          Jewerly
         </li>
-        
-        <li onClick={redirect}>Contact</li>
-        <li onClick={redirect}>About</li>
+        </Link>
+        <Link to="/category/electronics">
+        <li>Electronics</li>
+        </Link>
+        <li >About</li>
       </ul>
       <Link to="/cart">
       <CartWidget />
