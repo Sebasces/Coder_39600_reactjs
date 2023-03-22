@@ -16,17 +16,22 @@ const NavBar = () => {
         <Link to="/" style={{color:'white', textDecoration: 'none' }}> 
         <li >Home</li>
         </Link>
-        <Link to="/category/jewerly">
+        <Link to="/category/jewelery" style={{color:'white', textDecoration: 'none' }}>
         <li>
           Jewerly
         </li>
         </Link>
-        <Link to="/category/electronics">
+        <Link to="/category/electronics" style={{color:'white', textDecoration: 'none' }}>
         <li>Electronics</li>
         </Link>
-        <li >About</li>
+        <Link to="/category/men's clothing" style={{color:'white', textDecoration: 'none' }}>
+        <li >Men´s Clothing</li>
+        </Link>
+        <Link to="/category/women's clothing" style={{color:'white', textDecoration: 'none' }}>
+        <li>Women´s Clothing</li>
+        </Link>
       </ul>
-      <Link to="/cart">
+      <Link to="/cart" style={{color:'white', textDecoration: 'none'}}>
       <CartWidget />
       </Link>
     </nav>

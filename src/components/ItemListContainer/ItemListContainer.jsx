@@ -11,7 +11,7 @@ const ItemListContainer = () => {
 
   
 
-  const { categoryId } = useParams;
+  const { categoryId } = useParams ()
 
   const [products, setProducts] = useState ([])
 
@@ -19,26 +19,27 @@ const ItemListContainer = () => {
   useEffect (() => {  
     fetch('https://fakestoreapi.com/products/')
   .then(res=>res.json())
-  .then(data=>{
+  .then(data=>{ 
 if(categoryId){
 const productFiltrados = data.filter(p => p.category === categoryId)
 setProducts(productFiltrados )
-}else{
+} else{
 setProducts(data)
 }})
   .catch((error) => {    
     console.error(error);    
   })
-  }, [] )
+  }, [categoryId] );
 
 
 return (
     
-
+    <div className={styles.ilc}>
     <div className={styles.cardContainer}>
       {products.map ((product) => (
       <Carta key={product.id} product={product} className={styles.producto}>
       </Carta>)) }
+      </div>
     </div>
   
   
