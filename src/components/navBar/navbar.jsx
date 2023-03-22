@@ -4,6 +4,7 @@ import CartWidget from '../CartWidget/CartWidget';
 import logo from './logo.png'
 import { Link } from 'react-router-dom';
 
+
 const redirect = () => {alert('Proximamente')}
 const NavBar = () => {
   return (
@@ -16,7 +17,9 @@ const NavBar = () => {
         <li >Home</li>
         </Link>
         
-        <li>Products</li>
+        <li>
+          Productos
+        </li>
         
         <li onClick={redirect}>Contact</li>
         <li onClick={redirect}>About</li>

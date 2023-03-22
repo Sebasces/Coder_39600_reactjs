@@ -1,37 +1,41 @@
 
-import Button from '../Button/Button'
+
 import styles from './itemlistcontainer.module.css'
 import Carta from '../Card/Carta';
+import Categories from '../Categorias/Categorias';
+import { useParams } from 'react-router-dom';
 
 
 
 
 
-const greeting = () => {alert("Bienvenido al Sitio de Tekarg. Aqui podrán acceder a productos tecnologicos al mejor precio. Actualmente el sitio se encuentra en Construccion")};
 
 
 
 const ItemListContainer = ( {products}) => {
+
+  const categorias = [
+  "electronics",
+  "jewerly", 
+  "men's clothing",
+  "women's clothing",
+]
+console.log(categorias)
+
+const { categoria } = useParams;
+if (categoria != undefined) {products = products.filter((product) => product.category == categoria)}
   
-  
-  
-  return (
-    <>
-    <div className={styles.ilc}>
-      <div className={styles.categorybutton}>
-        <Button text="Electronics" handleClick={greeting}/>
-        <Button text="Men´s Clothing" handleClick={greeting} />
-        <Button text="Women´s Clothing" handleClick={greeting}/>
-        <Button text="Jewerly" handleClick={greeting}/>
-        </div>
+return (
+    <div>   
+      <div>
+    <Categories />
+      </div>
     <div className={styles.cardContainer}>
       {products.map ((product) => (
       <Carta key={product.id} product={product} className={styles.producto}>
       </Carta>)) }
     </div>
     </div>
-    
-    </>
   )
 }
 
