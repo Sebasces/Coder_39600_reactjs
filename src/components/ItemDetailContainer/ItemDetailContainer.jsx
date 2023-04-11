@@ -1,37 +1,34 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+
+import {  useParams } from 'react-router-dom'
 import styles from './itemdetailcontainer.module.css'
-import Button from '../Button/Button'
+import { dataContext } from '../Context/Context'
+import { useContext } from 'react'
+
+
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState ({})
-  const {id} = useParams ();
- 
- useEffect (() =>
- {  
-  fetch(`https://fakestoreapi.com/products/${id}`)
-.then(res=>res.json())
-.then(data=>setProduct(data))
-.catch((error) => {    
-  console.error(error);    
-})
-}, [] )
+const { id } = useParams ();
+const { products, cart, setCart } = useContext (dataContext);
 
+
+const comprar = (product) => {
+  setCart[cart, product]
+}
+const product = products.find ((product => (product.id === parseInt( id )  ))) 
  
- 
+
  return (
-  <div className={styles.itemProduct}>
+  
+  <div className={styles.itemProduct} key={product.id}>
   <h2>{product.title}</h2>
   <img src={product.image} alt="" width="300" height="300"/>
   <h4>Category:{product.category}</h4>
   <h4>Description: {product.description}</h4>
   <h4>Price: ${product.price}</h4>
-  <Link to="/cart">
-  <Button text="add to cart"/>
-  </Link>
+  <button onClick={comprar (product)}> add to cart </button>
   </div>
   
-
+ 
   
   )
 }
